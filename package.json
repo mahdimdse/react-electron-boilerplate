@@ -1,0 +1,49 @@
+{
+  "name": "react-electron-boilerplate",
+  "version": "0.1.0",
+  "author": "mahdimdse",
+  "main": "public/electron.js",
+  "homepage": "./",
+  "private": false,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "electron": "^27.1.2",
+    "electron-builder": "^24.9.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "set BROWSER=none && react-scripts start",
+    "build": "set CI=false && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
+    "package-win": "electron-builder build --win -c.extraMetadata.main=build/electron.js --publish never",
+    "package-mac": "electron-builder build --mac -c.extraMetadata.main=build/electron.js --publish never",
+    "publish-win": "electron-builder build --win --publish always",
+    "publish-mac": "electron-builder build --mac --publish always"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
